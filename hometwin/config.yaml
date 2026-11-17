@@ -1,0 +1,27 @@
+name: HomeTwin
+version: "0.1.0"
+slug: hometwin
+description: A live 3D twin of your home, with this Home Assistant's devices in their rooms
+url: https://github.com/all-self-hosted/hometwin
+arch:
+  - amd64
+  - aarch64
+startup: application
+boot: auto
+ingress: true
+ingress_port: 6417
+panel_icon: mdi:floor-plan
+panel_title: HomeTwin
+homeassistant_api: true
+ports:
+  6417/tcp: null
+ports_description:
+  6417/tcp: The web UI outside Home Assistant (off unless you set a port; set a password first)
+options:
+  vr_import: false
+schema:
+  password: password?
+  llm_base_url: url?
+  llm_api_key: password?
+  llm_model: str?
+  vr_import: bool
